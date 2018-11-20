@@ -47,8 +47,8 @@ public class Testscript1 extends Testhelper {
    		}
 	
 	
-	@Test
-	@Parameters({"username","password"})
+	//@Test
+	//@Parameters({"username","password"})
 	public void teamscamapppage(String u,String p) throws InterruptedException{
 		Homepage objLogin = new Homepage(driver);	
 	    Dashboard log=objLogin.logintoq7(u,p);
@@ -58,15 +58,22 @@ public class Testscript1 extends Testhelper {
 	}
 	
 	@Test
-	public void teamscanapp() throws InterruptedException
+	@Parameters({"username","password"})
+	public void teamscanapp(String u,String p) throws InterruptedException
+	
 	{
+		Homepage objLogin = new Homepage(driver);	
+	    Dashboard log=objLogin.logintoq7(u,p);
+	    //log.Teamscanlink();
+	   
+	    Thread.sleep(8000);
 		 driver.get("https://app-dev.q7leader.com/app/teamscan");
 		 
-		 Thread.sleep(5000);
+		 Thread.sleep(10000);
 		 
 		 Teamscanpage objteamscan = new Teamscanpage(driver);
 		 objteamscan.appclick();	
-		 Thread.sleep(5000);
+		 Thread.sleep(10000);
 		 Teamscanfield objteamscanfield = new Teamscanfield(driver);
 		 objteamscanfield.addnew();
 		 Thread.sleep(5000);
