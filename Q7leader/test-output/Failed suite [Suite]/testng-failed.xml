@@ -2,14 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Suite]]">
   <test thread-count="5" name="Test(failed)(failed)">
-    <parameter name="password" value="parayil007"/>
+    <parameter name="password" value="Test@111"/>
     <parameter name="browsers" value="Chrome"/>
-    <parameter name="username" value="nino070"/>
+    <parameter name="username" value="testuserone"/>
     <classes>
       <class name="Testscripts.Testscript1">
         <methods>
-          <include name="Parameterized" invocation-numbers="0"/>
-          <include name="browserclose"/>
+          <include name="teamscanapp" invocation-numbers="0"/>
           <include name="openbrowers"/>
         </methods>
       </class> <!-- Testscripts.Testscript1 -->

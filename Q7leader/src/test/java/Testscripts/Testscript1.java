@@ -82,6 +82,15 @@ public class Testscript1 extends Testhelper {
 		 objteamscanfield.addnew();
 		 objteamscanfield.teamscansection();
 		 Thread.sleep(2000);
+		 
+		 String expectedcolor = "rgba(20, 204, 143, 1)";
+		 String actualcolor=objteamscanfield.colortest();
+		 
+		 Assert.assertEquals(actualcolor,expectedcolor);
+		 {
+			    
+		    	System.out.println("Color test  passed"+expectedcolor);
+		    	}
 
 	}
 	    

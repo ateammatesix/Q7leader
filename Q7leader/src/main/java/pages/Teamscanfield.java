@@ -24,32 +24,38 @@ WebDriver driver;
 	@FindBy(xpath="//*[contains(@id,'mat-select-14')]")
 	WebElement rolefield;
 	
-	@FindBy(xpath="//*[contains(text(),'3.COORDIN')]")
+	//@FindBy(xpath="//*[contains(text(),'3.COORDIN')]")
+	@FindBy(xpath="//*[contains(@class, 'mat-option-text') and text()='3.COORDIN']")
 	WebElement role3coordin;
 	
 	@FindBy(xpath="//*[contains(@id,'mat-select-15')]")
+	
 	WebElement operatingfield;
 	
-	@FindBy(xpath="//*[contains(text(),'5.OPER DEV')]")
+	//@FindBy(xpath="//*[contains(text(),'5.OPER DEV')]")
+	@FindBy(xpath="//*[contains(@class, 'mat-option-text') and text()='5.OPER DEV ']")
 	WebElement operating5operdev;
 	
 	@FindBy(xpath="//*[contains(@id,'mat-select-16')]")
 	WebElement competencefield;
 	
-	@FindBy(xpath="//*[contains(text(),'GURU')]")
+	//@FindBy(xpath="//*[contains(text(),'GURU')]")
+	@FindBy(xpath="//*[contains(@class, 'mat-option-text') and text()='GURU']")
 	WebElement competenceguru;
 	
 	@FindBy(xpath="//*[contains(@id,'mat-select-17')]")
 	WebElement performancefield;
 	
-	@FindBy(xpath="//*[contains(text(),'HIGH')]")
+	//@FindBy(xpath="//*[contains(text(),'HIGH')]")
+	@FindBy(xpath="//*[contains(@class, 'mat-option-text') and text()='HIGH']")
 	WebElement performancehigh;
 	
 	
 	@FindBy(xpath="//*[contains(@id,'mat-select-18')]")
 	WebElement talentfield;
 	
-	@FindBy(xpath="//*[contains(text(),'RISING')]")
+	//@FindBy(xpath="//*[contains(text(),'RISING')]")
+	@FindBy(xpath="//*[contains(@class, 'mat-option-text') and text()='RISING']")
 	WebElement talentrising;
 	
 	
@@ -57,20 +63,23 @@ WebDriver driver;
 	@FindBy(xpath="//*[contains(@id,'mat-select-19')]")
 	WebElement visionfield;
 	
-	@FindBy(xpath="//*[contains(text(),'MODEL')]")
+	//@FindBy(xpath="//*[contains(text(),'MODEL')]")
+	@FindBy(xpath="//*[contains(@class, 'mat-option-text') and text()='MODEL']")
 	WebElement visionmodel;
 
 	@FindBy(xpath="//*[contains(@id,'mat-select-20')]")
 	WebElement attritionfield;
 	
-	@FindBy(xpath="//*[contains(text(),'LOW')]")
+	//@FindBy(xpath="//*[contains(text(),'LOW')]")
+	@FindBy(xpath="//*[contains(@class, 'mat-option-text') and text()='LOW']")
 	WebElement attritionlow;
 	
 	@FindBy(xpath="//*[contains(@id,'mat-select-22')]")
 	WebElement timeinrolefield;
 	
 	//@FindBy(xpath="//*[@id=\"mat-option-212\"]")
-	@FindBy(xpath="//*[@id=\"mat-option-197\"]/span")
+	//@FindBy(xpath="//*[@id=\"mat-option-197\"]/span")
+	@FindBy(xpath="//*[contains(@class, 'mat-option-text') and text()='2-3']")
 	WebElement Timeinrole12;
 	
 	@FindBy(xpath="//*[contains(text(),'Team Scan')]")
@@ -80,9 +89,15 @@ WebDriver driver;
 	WebElement globalscore;
 	
 	//@FindBy(xpath="//*[@id='mat-tab-label-1-2' and @class ='mat-tab-label mat-ripple ng-star-inserted']")
-	@FindBy(xpath="//*[@id=\"mat-tab-label-1-2\"]")
+	@FindBy(xpath="//*[contains(@class, 'mat-tab-label mat-ripple ng-star-inserted') and text()='Team Scan']")
 	
 	WebElement teamscanoption;
+	
+	
+	
+	//@FindBy(xpath="//*[@id=\"mat-tab-content-1-2\"]/div/mat-body/div/div/table/tbody/tr[1]/td[3]")
+	@FindBy(xpath="//*[@class='reg-col px-0.5 ng-star-inserted']")
+	WebElement score1;
 	
 	
 	
@@ -122,11 +137,22 @@ WebDriver driver;
 		
 	}
 	
+	public String colortest() {
+
+		WebDriverWait wait=new WebDriverWait(driver,30);
+		 WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='reg-col px-0.5 ng-star-inserted']")));
+		
+		 String color =score1.getCssValue("background-color").trim();    
+		 System.out.println("RGB_Color: " + color);
+		 
+		 return color;
+	}
+	
 public void teamscansection(){
 	
 	
 	WebDriverWait wait=new WebDriverWait(driver,30);
-	 WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"mat-tab-label-1-2\"]")));
+	 WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class, 'mat-tab-label mat-ripple ng-star-inserted') and text()='Team Scan']")));
 	//teamscanscore.click();
 	teamscanoption.click();
 }
