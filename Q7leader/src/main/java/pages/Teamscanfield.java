@@ -1,9 +1,12 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Teamscanfield {
 WebDriver driver;
@@ -66,8 +69,24 @@ WebDriver driver;
 	@FindBy(xpath="//*[contains(@id,'mat-select-22')]")
 	WebElement timeinrolefield;
 	
-	@FindBy(xpath="//*[contains(text(),'1-2')]")
+	//@FindBy(xpath="//*[@id=\"mat-option-212\"]")
+	@FindBy(xpath="//*[@id=\"mat-option-197\"]/span")
 	WebElement Timeinrole12;
+	
+	@FindBy(xpath="//*[contains(text(),'Team Scan')]")
+	WebElement teamscanscore;
+	
+	@FindBy(xpath="//*[@id=\"mat-tab-content-0-2\"]/div/mat-body/div/div/table/tbody/tr[2]/td[3]")
+	WebElement globalscore;
+	
+	//@FindBy(xpath="//*[@id='mat-tab-label-1-2' and @class ='mat-tab-label mat-ripple ng-star-inserted']")
+	@FindBy(xpath="//*[@id=\"mat-tab-label-1-2\"]")
+	
+	WebElement teamscanoption;
+	
+	
+	
+	
 	
 	public Teamscanfield(WebDriver driver) {
 		this.driver = driver;
@@ -100,6 +119,15 @@ WebDriver driver;
 		timeinrolefield.click();
 		Timeinrole12.click();
 		
+		
 	}
-
+	
+public void teamscansection(){
+	
+	
+	WebDriverWait wait=new WebDriverWait(driver,30);
+	 WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"mat-tab-label-1-2\"]")));
+	//teamscanscore.click();
+	teamscanoption.click();
+}
 }

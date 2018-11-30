@@ -13,6 +13,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -51,8 +53,8 @@ public class Testscript1 extends Testhelper {
 	//@Parameters({"username","password"})
 	public void teamscamapppage(String u,String p) throws InterruptedException{
 		Homepage objLogin = new Homepage(driver);	
-	    Dashboard log=objLogin.logintoq7(u,p);
-	    //log.Teamscanlink();
+	    Dashboard dashobj=objLogin.logintoq7(u,p);
+	    //dashobj.Teamscanlink();
 	   
 	    Thread.sleep(8000);
 	}
@@ -63,20 +65,23 @@ public class Testscript1 extends Testhelper {
 	
 	{
 		Homepage objLogin = new Homepage(driver);	
-	    Dashboard log=objLogin.logintoq7(u,p);
+	    Dashboard dashobj=objLogin.logintoq7(u,p);
 	    //log.Teamscanlink();
-	   
-	    Thread.sleep(8000);
-		 driver.get("https://app-dev.q7leader.com/app/teamscan");
-		 
-		 Thread.sleep(10000);
-		 
+	    dashobj.VerifyLogin();
+	   dashobj.dashboardwait();
+	    System.out.println("dashboard displayed");
+	    //dashobj.sidebaraction();
+	    Thread.sleep(12000);
+		 driver.get("https://app-dev.q7leader.com/app/teamscan");	 
 		 Teamscanpage objteamscan = new Teamscanpage(driver);
+		 System.out.println("teamscan displayed");
+		 objteamscan.teamscanwait();
 		 objteamscan.appclick();	
-		 Thread.sleep(10000);
+		Thread.sleep(2000);
 		 Teamscanfield objteamscanfield = new Teamscanfield(driver);
 		 objteamscanfield.addnew();
-		 Thread.sleep(5000);
+		 objteamscanfield.teamscansection();
+		 Thread.sleep(2000);
 
 	}
 	    

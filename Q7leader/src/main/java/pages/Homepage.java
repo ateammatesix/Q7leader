@@ -11,8 +11,6 @@ import org.testng.Assert;
 
 public class Homepage {
 	
-
-
 	WebDriver driver;
 
 	
@@ -40,7 +38,7 @@ public Homepage(WebDriver driver){
 
 
 
-public Dashboard logintoq7(String u,String p){
+public Dashboard logintoq7(String u,String p) throws InterruptedException{
 
 	//Loginedpage login = null;
 
@@ -55,6 +53,7 @@ public Dashboard logintoq7(String u,String p){
 
     //this.signinclick();
 	signin.click();
+	
 	return new Dashboard(driver);
 
 }         
