@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -100,6 +101,18 @@ WebDriver driver;
 	WebElement score1;
 	
 	
+	@FindBy(xpath="//*[@id=\"mat-tab-content-0-0\"]/div/div/div/table/tbody/tr[position()=last()]")
+	WebElement newclick;
+	
+	@FindBy(xpath="//*[@id=\"mat-tab-content-0-0\"]/div/div/div/table/tbody/tr[position()=last()-1]/td[2]")
+	WebElement newname;
+	
+	
+	@FindBy(xpath="//*[@id=\"mat-tab-content-0-0\"]/div/div/div/table/tbody/tr[position()=last()-1]/td[3]")
+	WebElement newrole;
+	
+	@FindBy(xpath="//*[@class='mat-input-element mat-form-field-autofill-control ng-pristine ng-valid ng-touched']")
+	WebElement nametext;
 	
 	
 	
@@ -156,4 +169,31 @@ public void teamscansection(){
 	//teamscanscore.click();
 	teamscanoption.click();
 }
+
+public void newdataentry() throws InterruptedException
+{
+	newclick.click();
+
+//	WebDriverWait wait=new WebDriverWait(driver,30);
+//	 WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"mat-tab-content-0-0\"]/div/div/div/table/tbody/tr[position()=last()-1]/td[3]")));
+	 Thread.sleep(8000);
+	 
+	 
+//	 WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mat-tab-content-0-0\"]/div/div/div/table/tbody/tr[position()=last()-1]/td[2]"));
+//	 WebDriverWait wait2=new WebDriverWait(driver,30);
+//	 
+//	 
+//	 WebElement element2=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='mat-input-element mat-form-field-autofill-control ng-valid ng-touched ng-dirty']")));
+//	 Actions actions = new Actions(driver);
+//	 
+//	 
+//     actions.moveToElement(driver.findElement(By.xpath("//*[@class='mat-input-element mat-form-field-autofill-control ng-valid ng-touched ng-dirty']")));
+//     actions.click();
+//     actions.sendKeys("RahulRahul");
+//     actions.build().perform();
+	 newrole.click();
+	 role3coordin.click();
+	 //newname.sendKeys("rahul");
+}
+
 }

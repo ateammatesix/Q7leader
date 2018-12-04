@@ -59,9 +59,9 @@ public class Testscript1 extends Testhelper {
 	    Thread.sleep(8000);
 	}
 	
-	@Test
+	//@Test
 	@Parameters({"username","password"})
-	public void teamscanapp(String u,String p) throws InterruptedException
+	public void teamscanappcalcualtion(String u,String p) throws InterruptedException
 	
 	{
 		Homepage objLogin = new Homepage(driver);	
@@ -93,7 +93,38 @@ public class Testscript1 extends Testhelper {
 		    	}
 
 	}
+	
+	
+	
+	
+	
+	@Test
+	@Parameters({"username","password"})
+	public void TSAcalfromnew(String u,String p) throws InterruptedException
+	
+	{
+		Homepage objLogin = new Homepage(driver);	
+	    Dashboard dashobj=objLogin.logintoq7(u,p);
+	    //log.Teamscanlink();
+	    dashobj.VerifyLogin();
+	   dashobj.dashboardwait();
+	    System.out.println("dashboard displayed");
+	    //dashobj.sidebaraction();
+	    Thread.sleep(12000);
+		 driver.get("https://app-dev.q7leader.com/app/teamscan");	 
+		 Teamscanpage objteamscan = new Teamscanpage(driver);
+		 System.out.println("teamscan displayed");
+		 objteamscan.teamscanwait();
+		 objteamscan.appclick();	
+		Thread.sleep(2000);
+		 Teamscanfield objteamscanfield = new Teamscanfield(driver);
+		 objteamscanfield.newdataentry();	 
+	}
 	    
+	
+	
+	
+	
 	  
 			@DataProvider
 	    	public Object[][] getData()

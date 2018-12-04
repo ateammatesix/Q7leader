@@ -8,7 +8,7 @@
     <classes>
       <class name="Testscripts.Testscript1">
         <methods>
-          <include name="teamscanapp" invocation-numbers="0"/>
+          <include name="TSAcalfromnew" invocation-numbers="0"/>
           <include name="openbrowers"/>
         </methods>
       </class> <!-- Testscripts.Testscript1 -->
