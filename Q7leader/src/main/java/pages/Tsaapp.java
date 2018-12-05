@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Teamscanpage {
+public class Tsaapp {
 	
 	WebDriver driver;
 	
@@ -26,7 +26,7 @@ public class Teamscanpage {
 	
 	
 	
-	public Teamscanpage(WebDriver driver) {
+	public Tsaapp(WebDriver driver) {
 		this.driver = driver;
 
 	    //This initElements method will create all WebElements

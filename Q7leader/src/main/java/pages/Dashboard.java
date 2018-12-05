@@ -49,7 +49,7 @@ import Testscripts.Testhelper;
 		}
 		
 		public void dashboardwait() {
-			 WebDriverWait wait=new WebDriverWait(driver,80);
+			 WebDriverWait wait=new WebDriverWait(driver,140);
 			 WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"page-container\"]/my-app-header/section/div/div[4]/form/button")));
 			
 		}

@@ -27,8 +27,9 @@ import org.testng.annotations.Test;
 import pages.Dashboard;
 import pages.Homepage;
 import pages.Loginedpage;
+import pages.Teamscanapp;
 import pages.Teamscanfield;
-import pages.Teamscanpage;
+import pages.Tsaapp;
 
 
 public class Testscript1 extends Testhelper {
@@ -73,7 +74,7 @@ public class Testscript1 extends Testhelper {
 	    //dashobj.sidebaraction();
 	    Thread.sleep(12000);
 		 driver.get("https://app-dev.q7leader.com/app/teamscan");	 
-		 Teamscanpage objteamscan = new Teamscanpage(driver);
+		 Tsaapp objteamscan = new Tsaapp(driver);
 		 System.out.println("teamscan displayed");
 		 objteamscan.teamscanwait();
 		 objteamscan.appclick();	
@@ -98,7 +99,7 @@ public class Testscript1 extends Testhelper {
 	
 	
 	
-	@Test
+	//@Test
 	@Parameters({"username","password"})
 	public void TSAcalfromnew(String u,String p) throws InterruptedException
 	
@@ -112,7 +113,7 @@ public class Testscript1 extends Testhelper {
 	    //dashobj.sidebaraction();
 	    Thread.sleep(12000);
 		 driver.get("https://app-dev.q7leader.com/app/teamscan");	 
-		 Teamscanpage objteamscan = new Teamscanpage(driver);
+		 Tsaapp objteamscan = new Tsaapp(driver);
 		 System.out.println("teamscan displayed");
 		 objteamscan.teamscanwait();
 		 objteamscan.appclick();	
@@ -121,6 +122,25 @@ public class Testscript1 extends Testhelper {
 		 objteamscanfield.newdataentry();	 
 	}
 	    
+	@Test
+		@Parameters({"username","password"})
+		public void teamscancompare(String u,String p) throws InterruptedException
+		
+		{
+			Homepage objLogin = new Homepage(driver);	
+		    Dashboard dashobj=objLogin.logintoq7(u,p);
+		    //log.Teamscanlink();
+		    dashobj.VerifyLogin();
+		   dashobj.dashboardwait();
+		    System.out.println("dashboard displayed");
+		    //dashobj.sidebaraction();
+		    Thread.sleep(12000);
+			 driver.get("https://app-dev.q7leader.com/app/analytics/teamscan");	 
+			 Teamscanapp objteamscanfield = new Teamscanapp(driver);
+		   Thread.sleep(8000);
+			 objteamscanfield.tagcancel();
+	         
+		}
 	
 	
 	
