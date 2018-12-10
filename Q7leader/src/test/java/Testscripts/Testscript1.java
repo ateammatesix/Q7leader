@@ -138,7 +138,12 @@ public class Testscript1 extends Testhelper {
 			 driver.get("https://app-dev.q7leader.com/app/analytics/teamscan");	 
 			 Teamscanapp objteamscanfield = new Teamscanapp(driver);
 		   Thread.sleep(8000);
-			 objteamscanfield.tagcancel();
+			 //objteamscanfield.tagcancel();
+		   objteamscanfield.rolevalue();
+		   objteamscanfield.operatevalue();
+		   System.out.println("----------------------------");
+		   
+		   objteamscanfield.compareroleoperating();
 	         
 		}
 	

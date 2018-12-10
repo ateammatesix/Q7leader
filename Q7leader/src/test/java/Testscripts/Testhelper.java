@@ -39,10 +39,10 @@ public class Testhelper  {
 	void openbrowers(String brow)
 	{
 	browsers(brow);
-	
+	driver.manage().window().maximize();
 	System.out.println("Browser name is "+brow);
 	driver.get("https://app-dev.q7leader.com/login");
-	driver.manage().window().maximize();
+	
 	
 }
 	
